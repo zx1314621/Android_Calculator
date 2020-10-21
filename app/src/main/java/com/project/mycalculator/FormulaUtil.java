@@ -64,7 +64,7 @@ public class FormulaUtil {
                 while (!comparePri(ch) && !symbolStack.empty()) {
                     BigDecimal b = numberStack.pop();
 
-                    if ((symbolStack.peek() == '-' || symbolStack.peek() == '+') && (numberStack.isEmpty() || symbolNum != numberStack.size())) {
+                    if ((symbolStack.peek() == '-' || symbolStack.peek() == '+') && (numberStack.isEmpty() || symbolStack.size() != numberStack.size())) {
                         char t = symbolStack.pop();
                         symbolNum--;
                         if(t == '+') numberStack.push(new BigDecimal(0).add(b));
